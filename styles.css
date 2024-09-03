@@ -1,117 +1,127 @@
 @font-face {
-   font-family: Nerko;
-   src: url("NerkoOne-Regular.ttf");
+  font-family: Nerko;
+  src: url("NerkoOne-Regular.ttf");
 }
 
 *{
-   margin: 0;
-   padding: 0;  
- }
- html{
-   font-family: Poppins;
-   color: #f0f0f0;
- }
- body{
-   min-height: 100vh;
-   background-image: url('https://steamuserimages-a.akamaihd.net/ugc/259346695107514168/5EADD0F01C45D0742687C37E9E99641B30556A0E/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=falseS');
-   background-size: cover;
-   color: #000000;
-   align-content: center;
- }
+  margin: 0;
+  padding: 0;  
+}
+html{
+  font-family: Poppins;
+  color: #f0f0f0;
+}
+body{
+  min-height: 100vh;
+  background-image: url('https://steamuserimages-a.akamaihd.net/ugc/259346695107514168/5EADD0F01C45D0742687C37E9E99641B30556A0E/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=falseS');
+  background-size: cover;
+  color: #000000;
+  align-content: center;
+}
 
- p{
-   color: rgb(255, 255, 255);
-   font-size: px;
- }
- h1{
-   color: rgb(255, 255, 255);
-   font-size: 60px;
- }
- .card{
-   margin: 0 auto;
-   padding: 14em;
-   width: 400px;
-   background-image: url('https://i.pinimg.com/originals/fb/2f/42/fb2f42619c64a29927ad64cd72dafe51.gif');
-   background-size: cover;
-   text-align: center;
-   border-radius: 10px;
-   position: relative;
- }
- 
- @property --angle{
-   syntax: "<angle>";
-   initial-value: 0deg;
-   inherits: false;
- }
- 
- .card::after, .card::before{
-   content: '';
-   position: absolute;
-   height: 100%;
-   width: 100%;
-   background-image: conic-gradient(from var(--angle), #ffffff, #dadada, #919191, #9e9e9e, #bfbfbf , #ffffff);
-   top: 50%;
-   left: 50%;
-   translate: -50% -50%;
-   z-index: -1;
-   padding: 3px;
-   border-radius: 10px;
-   animation: 3s spin linear infinite;
- }
- .card::before{
-   filter: blur(1.5rem);
-   opacity: 0.5;
- }
-
- @keyframes spin{
-   from{
-     --angle: 0deg;
-   }
-   to{
-     --angle: 360deg;
-   }
- }
+p{
+  color: rgb(255, 255, 255);
+  font-size: px;
+}
+h1{
+  color: rgb(255, 255, 255);
+  font-size: 60px;
+}
 
 
- /* (PART A) SPLASH SCREEN */
+
+
+
+ /* card */
+.card{
+  margin: 0 auto;
+  padding: 14vh;
+  width: 400px;
+  background-image: url('https://img.wattpad.com/25c065f6ac6d5f908e7b75952835ba745a023e17/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f7552715078706250686f4b7856773d3d2d3732323833383139312e313539616461376565313236336566613238303634343335313634342e676966');
+  background-size: cover;
+  text-align: center;
+  border-radius: 10px;
+  position:relative;
+}
+ /* (important prop stuff nd angle def) */
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+ /* card blur and gradient stuff */
+.card::after, .card::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), #ffffff, #dadada, #919191, #9e9e9e, #bfbfbf , #ffffff);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
+}
+.card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+@keyframes spin{
+  from{
+    --angle: 0deg;
+  }
+  to{
+    --angle: 360deg;
+  }
+}
+
+
+/* splashscreen stuff */
 #splash {
-   /* (A1) FULLSCREEN */
-   position: fixed; top: 0; left: 0; z-index: 999;
-   width: 100vw; height: 100vh;
- 
-   /* (A2) CENTER */
-   display: flex;
-   align-items: center; justify-content: center;
- 
-   /* (A3) COSMETICS */
-   font-family: Nerko;
-   font-size: 50px;
-   color: #fff; background: #000;
- }
- 
- /* (A4) TO HIDE THE SPLASH SCREEN */
- #splash.hide {
-   opacity: 0; visibility: hidden;
-   transition: all 1s;
- }
- 
- div:hover {
-   cursor: pointer;
- }
+  /*Fullscreen */
+  position: fixed; top: 0; left: 0; z-index: 999;
+  width: 100vw; height: 100vh;
 
- .clicktostart {
-   font-family: Nerko;
-   -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
+  /* centering the stuff yk */
+  display: flex;
+  align-items: center; justify-content: center;
+
+  /* cosmetics */
+  font-family: Nerko;
+  font-size: 50px;
+  color: #fff; background: #000;
 }
 
+/* (A4) TO HIDE THE SPLASH SCREEN */
+#splash.hide {
+  opacity: 0; visibility: hidden;
+  transition: all 1s;
+}
+
+
+ /* more splash screen stuff */
+.clicktostart:hover {
+ cursor: pointer;
+}
+
+.clicktostart {
+  font-family: Nerko;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+ -moz-animation: glow 1s ease-in-out infinite alternate;
+ animation: glow 1s ease-in-out infinite alternate;
+}
+
+
+/* animations and whatnot */
 @-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #6694d9, 0 0 40px #5272ca, 0 0 50px #0073e6, 0 0 60px #004de6, 0 0 70px #e60073;
-  }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #504dff, 0 0 40px #4d5cff, 0 0 50px #7f4dff, 0 0 60px #564dff, 0 0 70px #744dff, 0 0 80px #ff4da6;
-  }
+ from {
+   text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #6694d9, 0 0 40px #5272ca, 0 0 50px #0073e6, 0 0 60px #004de6, 0 0 70px #e60073;
+ }
+ to {
+   text-shadow: 0 0 20px #fff, 0 0 30px #504dff, 0 0 40px #4d5cff, 0 0 50px #7f4dff, 0 0 60px #564dff, 0 0 70px #744dff, 0 0 80px #ff4da6;
+ }
 }
- 
+
